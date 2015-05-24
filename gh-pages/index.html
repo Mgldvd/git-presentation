@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Git</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=680, user-scalable=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="./styles/octicons.css">
+  <link rel="stylesheet" href="./styles/screen.css">
+  <link rel="stylesheet" href="./styles/main.css">
+</head>
+
+<body class="list">
+  <!--
+		Debug class on <body> enables
+		cyan grid on slides
+		-->
+  <header class="caption">
+    <h1> Curso Git </h1>
+    <h2> Control de versiones para profesionales </h2>
+  </header>
+
+
+  <section class="slide  cover h" id="me">
+    <div>
+      <h2>
+        Git
+      </h2>
+      <h3>Control de versiones para profesionales</h3>
+      <h4>Miguel D. Quintero</h4>
+      <p> @migueldavidq </p>
+      <p> migueldavidq@gmail.com </p>
+      <img src="./images/010101.jpg" alt="" />
+    </div>
+  </section>
+
+
+  <section class="slide">
+    <div>
+      <h2>Problemas de no tener control de versiones</h2>
+      <div class="">
+        <i class="fa fa-exclamation-triangle fa-5 red"></i>
+      </div>
+      <ul>
+        <li>Problemas para seguir el codigo.</li>
+        <li>Tener carpetas de version 1, version 2, version 3</li>
+        <li>Dificultad en la colaboración</li>
+      </ul>
+
+    </div>
+  </section>
+
+
+  <section class="slide slide-vs">
+    <div>
+      <h2>Centralizado
+        <span>vs</span> Distribuido</h2>
+      <img src="./images/Centralised-decentralised-distributed.png" alt="">
+    </div>
+  </section>
+
+
+  <section class="slide centralizado">
+    <div>
+      <h2>Centralizado</h2>
+      <ul>
+        <li>Todos deben conectarse a un servidor central.</li>
+        <li>No puedes trabajar sin conexión..</li>
+        <li>Políticas de escritura.</li>
+        <li>Los cambios afectan a todos.</li>
+        <li>Crear ramas es muy costoso, tardado o tedioso.</li>
+        <li>Las ramas afectan a todos porque son globales.</li>
+        <li>Necesitarías políticas de nomenclaturas para no estorbar a otros.</li>
+        <li>Te esperas a que tengas algo estable para subirlo al repositorio.</li>
+        <li>Nunca haces algo estable a la primera</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <section class="slide distribuido">
+    <div>
+      <h2>Distribuido</h2>
+      <ul>
+        <li>Todos son igual de importantes.</li>
+        <li>Se puede trabajar sin conexión.</li>
+        <li>Debes ganar confianza y confiar en otros.</li>
+        <li>Los cambios solo te afectan a ti.</li>
+        <li>Colaboración - Realiza cambios sin afectar a los demás.</li>
+        <li>Experimenta y ramifica el código a tu gusto.</li>
+        <li>No tienes que pedir permisos de escritura.</li>
+        <li>No hay un punto débil central, y la información se replica de forma natural.</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <section class="slide">
+    <div>
+      <h2>Cualidades de Git</h2>
+      <i class="fa fa-diamond fa-4 purple"></i>
+      <ul>
+        <li>Diseñado para manejar proyectos grandes.</li>
+        <li>Es extremadamente rápido.</li>
+        <li>Autentificación criptográfica del historial.</li>
+        <li>Formato de archivo muy sencillo y compacto.</li>
+        <li>100% distribuido.</li>
+        <li>Se puede sincronizar por cualquier medio.</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <section class="slide">
+    <div>
+      <h2>Git es para grandes</h2>
+      <i class="fa fa-ship fa-5 blue"></i>
+      <ul>
+        <li>Linux kernel tiene más de 22,000 archivos.</li>
+        <li>Ha usado Git los últimos años, haciendo 4.5 merges al día.</li>
+        <li>Mostrar las diferencias de todo el kernel, 74,000 commits, toman aprox. 7 segundos (cold cache) 2.3 seg. (warm cache).</li>
+        <li>El repositorio en CVS del Mozilla Project es de 3GB, en Subversion es de 12GB en formato fsfs. En Git es de 300 Mb</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <section class="slide">
+    <div>
+      <h2>De donde sale Git. Historia de Git:
+        <span>Linus Torvalds</span>
+      </h2>
+      <p> En 2002, el proyecto del núcleo de Linux empezó a usar BitKeeper un software propietario.
+        <br> En 2005 dejó de ser ofrecida gratuitamente. </p>
+
+      <ul>
+        <li>Velocidad</li>
+        <li>Sencillo</li>
+        <li>Distribuido</li>
+        <li>Desarrollo no lineal (ramas)</li>
+      </ul>
+
+      <div class="from-right">
+        <p>
+          "unpleasant person" - "persona desagradable"
+        </p>
+        <p>
+          Git as "the stupid content tracker"
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="slide what-is">
+    <div>
+      <h2>Que es Git</h2>
+      <img src="./images/Git-Icon-Black.png">
+      <p>Git es un sistema distribuido de control de código fuente o SCM (en inglés Source Code Management).</p>
+      <ul>
+        <li>Saber quién ha tocado qué y cuándo</li>
+        <li>Control sobre cómo ha cambiado nuestro proyecto con el paso del tiempo</li>
+        <li>Volver hacia atrás de una forma rápida</li>
+        <li>Control de versiones a través de etiquetas.</li>
+        <li>Seguridad: todas las estructuras internas de datos están firmadas con SHA1. No se puede cambiar el código sin que nos enteremos</li>
+        <li>Mejora nuestra capacidad de trabajar en equipo</li>
+        <li>Merging y branching extremadamente eficientes</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <section class="slide what-repo">
+    <div>
+      <h2>
+        What is a git repo ?
+      </h2>
+      <div>
+        <i class="fa fa-folder-open-o fa-5 "></i>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="slide shout right">
+    <div>
+      <h2>Getting Started with Git</h2>
+    </div>
+  </section>
+
+
+  <section class="slide ">
+    <div>
+      <h2>git config</h2>
+      <i class="fa fa-terminal fa-3 red"></i>
+      <pre>
+        <code>
+$ git config --global user.name "<span>USERNAME</span>"
+$ git config --global user.email "<span>EMAIL@EMAIL.com</span>"
+		</code>
+      </pre>
+    </div>
+  </section>
+
+
+  <section class="slide ">
+    <div>
+      <h2>Creating a git repo</h2>
+      <i class="fa fa-terminal fa-3 green"></i>
+      <pre>
+        <code>
+$ git init
+$ git add .
+$ git commit -m "init"
+
+git init <span>DIRECTORY</span>
+		</code>
+      </pre>
+    </div>
+  </section>
+
+
+  <section class="slide">
+    <div>
+      <h2>Staging</h2>
+      <img src="images/stage.png" alt="" />
+    </div>
+  </section>
+
+
+  <section class="slide working-git">
+    <div>
+      <h2>Working with Git</h2>
+      <i class="fa fa-terminal fa-3 purple"></i>
+      <pre>
+        <code>
+$ git add <span>README.md</span>
+$ git commit -m "<span>DESCRIPTIVE MESSAGE</span>"
+$ git status
+		</code>
+      </pre>
+      <p>
+        $ git add .
+      </p>
+      <p>
+        $ git status -u
+      </p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Git Add</h2>
+      <i class="fa fa-terminal fa-3 blue"></i>
+      <pre>
+        <code>
+$ git add <span>README.md</span>
+$ git add <span>*.txt</span>
+$ git add <span>docs/*.txt</span>
+$ git add <span>docs/</span>
+$ git add --all
+$ git add .
+		</code>
+      </pre>
+    </div>
+  </section>
+
+
+  <section class="slide">
+    <div>
+      <h2>Git Status</h2>
+      <i class="fa fa-terminal fa-3 red"></i>
+      <pre>
+        <code>
+$ git status
+
+
+
+<span class="blue">$ git status -h </span>
+  		</code>
+      </pre>
+    </div>
+  </section>
+
+
+  <section class="slide">
+    <div>
+      <h2>Git Commit</h2>
+      <i class="fa fa-terminal fa-3 orange"></i>
+      <pre>
+        <code>
+$ git commit -m  "<span>DESCRIPTIVE MESSAGE</span>"
+
+
+
+<span class="blue">$ git commit -h </span>
+		</code>
+      </pre>
+    </div>
+  </section>
+
+
+  <section class="slide cover ">
+    <div>
+      <h2>What is a hash?</h2>
+      <i class="fa fa-barcode fa-3 white"></i>
+      <ul>
+        <li>a127204a4f2db81e9ce29491641f15911ef3d1f1</li>
+        <li>f413107df4f80b7eff8508c4730bf175b1910f5a</li>
+        <li>30acbef642822c526b32552e09a335bb7452f938</li>
+        <li>bbcaf8ef8f70b1a3a2e33329b8cadf8bde965f29</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <section class="slide">
+    <div>
+      <h2>History </h2>
+      <i class="fa fa-history fa-3 orange"></i>
+      <pre>
+        <code>
+$ git log
+
+$ git log --summary
+$ git log --oneline
+$ git log --follow --oneline <span>FILE</span>
+$ git log --pretty=format:'%h - %cn - %s' --abbrev-commit
+		</code>
+      </pre>
+    </div>
+  </section>
+
+
+  <section class="slide">
+    <div>
+      <h2>View changes</h2>
+      <i class="fa fa-terminal fa-3 red"></i>
+      <pre>
+        <code>
+$ git diff
+
+$ git diff --staged
+		</code>
+      </pre>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2> Git Checkout </h2>
+      <i class="fa fa-terminal fa-3 green"></i>
+      <pre>
+        <code>
+$ git checkout master
+
+$ git checkout <span>COMMIT</span>
+$ git checkout <span>COMMIT FILE</span>
+$ git checkout HEAD <span>hello.py</span>
+		</code>
+      </pre>
+    </div>
+  </section>
+
+
+  <section class="slide">
+    <div>
+      <h2> Undoing Changes </h2>
+      <i class="fa fa-terminal fa-3 blue"></i>
+      <pre>
+        <code>
+$ git revert <span>COMMIT</span>
+
+$ git checkout <span>COMMIT</span>
+$ git checkout <span>COMMIT FILE</span>
+
+$ git reset <span>FILE</span>
+			</code>
+      </pre>
+    </div>
+  </section>
+
+
+  <section class="slide resumen-comandos">
+    <div>
+      <h2> Resume </h2>
+      <i class="fa fa-terminal fa-5"></i>
+      <pre>
+        <code>
+$ git config
+$ git init
+$ git add
+$ git commit
+$ git status
+$ git log
+$ git diff
+$ git revert
+$ git checkout
+$ git reset
+			</code>
+      </pre>
+    </div>
+  </section>
+
+
+  <section class="slide shout right">
+    <div>
+      <h2>Using Branches</h2>
+    </div>
+  </section>
+
+
+  <section class="slide">
+    <div>
+      <h2>Git Branch</h2>
+      <span class="octicon octicon-git-branch fa-4 green"></span>
+      <pre>
+        <code>
+	$ git branch
+	$ git branch <span>BRANCH-NAME</span>
+
+	$ git branch -d <span>BRANCH-NAME</span>
+	$ git branch -D <span>BRANCH-NAME</span>
+	$ git branch -m <span>NEW-NAME</span>
+			</code>
+      </pre>
+    </div>
+  </section>
+
+
+  <section class="slide">
+    <div>
+      <h2>Git Branch </h2>
+      <span class="octicon octicon-git-branch fa-4 purple"></span>
+      <pre>
+        <code>
+	$ git branch <span>BRANCH-NAME</span>
+
+	$ git checkout <span>BRANCH-NAME</span>
+
+	$ git checkout -b <span>BRANCH-NAME</span>
+			</code>
+      </pre>
+    </div>
+  </section>
+
+
+  <section class="slide">
+    <div>
+      <h2>Git Merge </h2>
+      <span class="octicon octicon-git-merge fa-5 pink"></span>
+      <pre>
+        <code>
+
+		$ git merge <span>BRANCH-NAME</span>
+
+		$ git merge --no-ff <span>BRANCH-NAME</span>
+
+			</code>
+      </pre>
+    </div>
+  </section>
+
+  <section class="slide shout right">
+    <div>
+      <h2>Remote</h2>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2 class="blue under-shadow"> Working with remote repos </h2>
+      <br>
+      <br>
+      <br>
+      <p>
+        <img src="./images/git-remote.png" alt="">
+      </p>
+    </div>
+  </section>
+
+
+  <section class="slide">
+    <div>
+      <h2 class="blue under-shadow"> Git remote </h2>
+      <i class="fa fa-connectdevelop fa-3 red"></i>
+      <pre>
+        <code>
+$ git remote
+$ git remote -v
+$ git remote add <span>NAME</span> <span>URL</span>
+$ git remote rm <span>NAME</span>
+$ git remote rename <span>OLD-NAME</span> <span>NEW-NAME</span>
+			</code>
+      </pre>
+    </div>
+  </section>
+
+
+  <section class="slide">
+    <div>
+      <h2 class="blue under-shadow"> Git remote </h2>
+      <i class="fa fa-connectdevelop fa-3 blue"></i>
+      <pre>
+        <code>
+	https://<span class="blue">github.com</span>/Mayccoll/Linux.git
+
+	ssh://user@<span class="blue">host</span>/path/to/repo.git
+
+	git@<span class="blue">github.com</span>:Mayccoll/Linux.git
+			</code>
+      </pre>
+    </div>
+  </section>
+
+
+  <section class="slide">
+    <div>
+      <h2 class="blue under-shadow"> Git clone </h2>
+      <span class="octicon octicon-cloud-download fa-4 purple"></span>
+      <pre>
+        <code>
+$ git clone	https://<span class="blue">github.com</span>/Mayccoll/Linux.git
+
+$ git clone	ssh://user@<span class="blue">host</span>/path/to/repo.git
+
+$ git clone	git@<span class="blue">github.com</span>:Mayccoll/Linux.git
+			</code>
+      </pre>
+    </div>
+  </section>
+
+
+  <section class="slide git-clone-url">
+    <div>
+      <h2 class="blue under-shadow"> Git Clone </h2>
+      <span class="octicon octicon-cloud-download fa-4 purple"></span>
+      <pre>
+        <code>
+  git clone git@<span>github.com</span>:mayccoll/Linux
+  ___ _____ ___ __________ ________ _____
+   1    2    3    4          5        6
+
+   1. Command
+   2. Argument
+
+   3. host user
+   4. host
+   5. User
+   6. Folder
+			</code>
+      </pre>
+    </div>
+  </section>
+
+
+  <section class="slide">
+    <div>
+      <h2 class="blue under-shadow"> Git Push </h2>
+      <span class="octicon octicon-cloud-upload fa-4 grey"></span>
+      <pre>
+        <code>
+$ git push <span>BRANCH</span>
+
+<span class="blue">$ git push origin master</span>
+			</code>
+      </pre>
+    </div>
+  </section>
+
+
+  <section class="slide">
+    <div>º
+      <h2 class="blue under-shadow"> Git fetch </h2>
+      <span class="octicon octicon-repo fa-4 grey"></span>
+      <pre>
+        <code>
+$ git fetch <span>REMOTE</span>
+
+$ git fetch <span>REMOTE</span>/<span>BRANCH</span>
+
+<span class="blue">$ git fetch origin</span>
+			</code>
+      </pre>
+    </div>
+  </section>
+
+
+  <section class="slide">
+    <div>
+      <h2 class="blue under-shadow"> Git Pull </h2>
+      <span class="octicon octicon-repo-pull fa-4 grey"></span>
+      <pre>
+        <code>
+$ git pull <span>REMOTE</span>
+
+=
+
+$ git fetch <span>REMOTE</span>
+$ git merge <span>REMOTE</span>/<span>BRANCH</span>
+			</code>
+      </pre>
+    </div>
+  </section>
+
+
+  <section class="slide">
+    <div>
+      <h2> Git Branch </h2>
+      <i class="fa fa-terminal fa-3 blue"></i>
+      <pre>
+        <code>
+$ git branch -a
+
+$ git branch -r
+			</code>
+      </pre>
+    </div>
+  </section>
+
+
+  <section class="slide resumen-comandos">
+    <div>
+      <h2> Resume </h2>
+      <i class="fa fa-terminal fa-5"></i>
+      <pre>
+        <code>
+$ git branch
+$ git checkout -b
+$ git merge
+$ git remote
+$ git clone
+$ git push
+$ git fetch
+$ git pull
+			</code>
+      </pre>
+    </div>
+  </section>
+
+
+  <section class="slide">
+    <div>
+      <h2> Learn </h2>
+      <span class="octicon octicon-browser fa-4 red"></span>
+      <div class="center">
+        <div>
+          <a href="https://www.atlassian.com/git/tutorials">Atlassian Tutorial</a>
+        </div>
+        <div>
+          <a href="http://gitimmersion.com/">Gitimmersion</a>
+        </div>
+        <a href="http://pcottle.github.io/learnGitBranching/">learn Git Branching</a>
+        <a href=""></a>
+        <a href=""></a>
+        <div>[es]</div>
+        <a href="http://librosweb.es/libro/pro_git/">Pro Git</a>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="slide">
+    <div>
+      <h2> Utils </h2>
+      <span class="octicon octicon-browser fa-4 purple"></span>
+
+      <div class="center">
+        <div>
+          <a href="http://git-scm.com/">Git</a>
+        </div>
+        <div>
+          <a href="https://github.com/tj/git-extras">Git Extras</a>
+        </div>
+        <div>
+          <a href="http://gitstats.sourceforge.net/">Git stats</a>
+        </div>
+        <div>
+          <a href="hhttps://www.gitignore.io/">Gitignore</a>
+        </div>
+        <div>
+          <a href="https://github.com/blog/273-github-ribbons">Github Ribbons</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <section class="slide">
+    <div>
+      <h2> GUIs </h2>
+      <span class="octicon octicon-device-desktop fa-5 grey"></span>
+      <p class="center">
+        <a href="https://git-scm.com/downloads/guis">GUI Clients</a>
+      </p>
+    </div>
+  </section>
+
+
+
+
+
+<p>Repo <a href="https://github.com/mayccoll/git-presentation/">Github</a></p>
+
+
+
+
+  <!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+  <div class="progress">
+    <div></div>
+  </div>
+  <script src="./shower.min.js"></script>
+  <!-- Copyright © 2014 Yours Truly, Famous Inc. -->
+</body>
+
+</html>
