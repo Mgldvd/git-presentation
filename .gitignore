@@ -1,0 +1,4 @@
+.ftpconfig
+ftp/
+node_modules/
+*lock*
