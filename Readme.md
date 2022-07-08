@@ -4,7 +4,7 @@
 
 **View:**
 
-http://mayccoll.github.io/git-presentation/
+http://Mgldvd.github.io/git-presentation/
 
 
 -----
