@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <title>Git</title>
@@ -44,8 +44,8 @@
         <i class="fa fa-exclamation-triangle fa-5 red"></i>
       </div>
       <ul>
-        <li>Problemas para seguir el codigo.</li>
-        <li>Tener carpetas de version 1, version 2, version 3</li>
+        <li>Problemas para seguir el código.</li>
+        <li>Tener carpetas de versión 1, versión 2, versión 3</li>
         <li>Dificultad en la colaboración</li>
       </ul>
 
@@ -67,14 +67,14 @@
       <h2>Centralizado</h2>
       <ul>
         <li>Todos deben conectarse a un servidor central.</li>
-        <li>No puedes trabajar sin conexión..</li>
+        <li>No puedes trabajar sin conexión.</li>
         <li>Políticas de escritura.</li>
         <li>Los cambios afectan a todos.</li>
         <li>Crear ramas es muy costoso, tardado o tedioso.</li>
         <li>Las ramas afectan a todos porque son globales.</li>
         <li>Necesitarías políticas de nomenclaturas para no estorbar a otros.</li>
         <li>Te esperas a que tengas algo estable para subirlo al repositorio.</li>
-        <li>Nunca haces algo estable a la primera</li>
+        <li>Nunca haces algo estable a la primera.</li>
       </ul>
     </div>
   </section>
@@ -104,7 +104,7 @@
       <ul>
         <li>Diseñado para manejar proyectos grandes.</li>
         <li>Es extremadamente rápido.</li>
-        <li>Autentificación criptográfica del historial.</li>
+        <li>Autenticación criptográfica del historial.</li>
         <li>Formato de archivo muy sencillo y compacto.</li>
         <li>100% distribuido.</li>
         <li>Se puede sincronizar por cualquier medio.</li>
@@ -119,9 +119,9 @@
       <i class="fa fa-ship fa-5 blue"></i>
       <ul>
         <li>Linux kernel tiene más de 22,000 archivos.</li>
-        <li>Ha usado Git los últimos años, haciendo 4.5 merges al día.</li>
-        <li>Mostrar las diferencias de todo el kernel, 74,000 commits, toman aprox. 7 segundos (cold cache) 2.3 seg. (warm cache).</li>
-        <li>El repositorio en CVS del Mozilla Project es de 3GB, en Subversion es de 12GB en formato fsfs. En Git es de 300 Mb</li>
+        <li>Ha usado Git durante los últimos años, realizando 4.5 fusiones al día.</li>
+        <li>Mostrar las diferencias de todo el kernel, 74,000 commits, toma aproximadamente 7 segundos (caché frío) o 2.3 segundos (caché caliente).</li>
+        <li>El repositorio en CVS del Mozilla Project es de 3GB, en Subversion es de 12GB en formato fsfs. En Git es de 300MB.</li>
       </ul>
     </div>
   </section>
@@ -129,7 +129,7 @@
 
   <section class="slide">
     <div>
-      <h2>De donde sale Git. Historia de Git:
+      <h2>De dónde sale Git. Historia de Git:
         <span>Linus Torvalds</span>
       </h2>
       <p> En 2002, el proyecto del núcleo de Linux empezó a usar BitKeeper un software propietario.
@@ -157,17 +157,17 @@
 
   <section class="slide what-is">
     <div>
-      <h2>Que es Git</h2>
+      <h2>Qué es Git</h2>
       <img src="./images/Git-Icon-Black.png">
       <p>Git es un sistema distribuido de control de código fuente o SCM (en inglés Source Code Management).</p>
       <ul>
-        <li>Saber quién ha tocado qué y cuándo</li>
-        <li>Control sobre cómo ha cambiado nuestro proyecto con el paso del tiempo</li>
-        <li>Volver hacia atrás de una forma rápida</li>
+        <li>Saber quién ha tocado qué y cuándo.</li>
+        <li>Control sobre cómo ha cambiado nuestro proyecto con el paso del tiempo.</li>
+        <li>Volver hacia atrás de una forma rápida.</li>
         <li>Control de versiones a través de etiquetas.</li>
-        <li>Seguridad: todas las estructuras internas de datos están firmadas con SHA1. No se puede cambiar el código sin que nos enteremos</li>
-        <li>Mejora nuestra capacidad de trabajar en equipo</li>
-        <li>Merging y branching extremadamente eficientes</li>
+        <li>Seguridad: todas las estructuras internas de datos están firmadas con SHA1. No se puede cambiar el código sin que nos enteremos.</li>
+        <li>Mejora nuestra capacidad de trabajar en equipo.</li>
+        <li>Fusión y ramificación extremadamente eficientes.</li>
       </ul>
     </div>
   </section>
@@ -176,7 +176,7 @@
   <section class="slide what-repo">
     <div>
       <h2>
-        What is a git repo ?
+        ¿Qué es un repositorio de git?
       </h2>
       <div>
         <i class="fa fa-folder-open-o fa-5 "></i>
@@ -187,7 +187,7 @@
 
   <section class="slide shout right">
     <div>
-      <h2>Getting Started with Git</h2>
+      <h2>Comenzando con Git</h2>
     </div>
   </section>
 
@@ -208,7 +208,7 @@ $ git config --global user.email "<span>EMAIL@EMAIL.com</span>"
 
   <section class="slide ">
     <div>
-      <h2>Creating a git repo</h2>
+      <h2>Creando un repositorio git</h2>
       <i class="fa fa-terminal fa-3 green"></i>
       <pre>
         <code>
@@ -233,7 +233,7 @@ git init <span>DIRECTORY</span>
 
   <section class="slide working-git">
     <div>
-      <h2>Working with Git</h2>
+      <h2>Trabajando con Git</h2>
       <i class="fa fa-terminal fa-3 purple"></i>
       <pre>
         <code>
@@ -305,7 +305,7 @@ $ git commit -m  "<span>DESCRIPTIVE MESSAGE</span>"
 
   <section class="slide cover ">
     <div>
-      <h2>What is a hash?</h2>
+      <h2>¿Qué es un hash?</h2>
       <i class="fa fa-barcode fa-3 white"></i>
       <ul>
         <li>a127204a4f2db81e9ce29491641f15911ef3d1f1</li>
@@ -319,7 +319,7 @@ $ git commit -m  "<span>DESCRIPTIVE MESSAGE</span>"
 
   <section class="slide">
     <div>
-      <h2>History </h2>
+      <h2>Historial</h2>
       <i class="fa fa-history fa-3 orange"></i>
       <pre>
         <code>
@@ -337,7 +337,7 @@ $ git log --pretty=format:'%h - %cn - %s' --abbrev-commit
 
   <section class="slide">
     <div>
-      <h2>View changes</h2>
+      <h2>Ver cambios</h2>
       <i class="fa fa-terminal fa-3 red"></i>
       <pre>
         <code>
@@ -368,7 +368,7 @@ $ git checkout HEAD <span>hello.py</span>
 
   <section class="slide">
     <div>
-      <h2> Undoing Changes </h2>
+      <h2> Deshaciendo Cambios </h2>
       <i class="fa fa-terminal fa-3 blue"></i>
       <pre>
         <code>
@@ -386,7 +386,7 @@ $ git reset <span>FILE</span>
 
   <section class="slide resumen-comandos">
     <div>
-      <h2> Resume </h2>
+      <h2> Resumen </h2>
       <i class="fa fa-terminal fa-5"></i>
       <pre>
         <code>
@@ -408,7 +408,7 @@ $ git reset
 
   <section class="slide shout right">
     <div>
-      <h2>Using Branches</h2>
+      <h2>Usando Ramas</h2>
     </div>
   </section>
 
@@ -466,13 +466,13 @@ $ git reset
 
   <section class="slide shout right">
     <div>
-      <h2>Remote</h2>
+      <h2>Repositorios Remotos</h2>
     </div>
   </section>
 
   <section class="slide">
     <div>
-      <h2 class="blue under-shadow"> Working with remote repos </h2>
+      <h2 class="blue under-shadow"> Trabajando con repositorios remotos </h2>
       <br>
       <br>
       <br>
@@ -573,7 +573,7 @@ $ git push <span>BRANCH</span>
 
 
   <section class="slide">
-    <div>º
+    <div>
       <h2 class="blue under-shadow"> Git fetch </h2>
       <span class="octicon octicon-repo fa-4 grey"></span>
       <pre>
@@ -624,7 +624,7 @@ $ git branch -r
 
   <section class="slide resumen-comandos">
     <div>
-      <h2> Resume </h2>
+      <h2> Resumen </h2>
       <i class="fa fa-terminal fa-5"></i>
       <pre>
         <code>
@@ -644,7 +644,7 @@ $ git pull
 
   <section class="slide">
     <div>
-      <h2> Learn </h2>
+      <h2> Aprender </h2>
       <span class="octicon octicon-browser fa-4 red"></span>
       <div class="center">
         <div>
@@ -665,7 +665,7 @@ $ git pull
 
   <section class="slide">
     <div>
-      <h2> Utils </h2>
+      <h2> Utilidades </h2>
       <span class="octicon octicon-browser fa-4 purple"></span>
 
       <div class="center">
