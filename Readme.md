@@ -2,6 +2,25 @@
 
 ## Version control for professionals
 
+### About This Repository
+
+This repository contains an interactive HTML presentation about Git version control system. The presentation covers fundamental Git concepts, commands, and workflows designed for professional developers.
+
+**Features:**
+- 🎯 Comprehensive Git tutorial from basics to advanced topics
+- 🌐 Available in both English and Spanish
+- 📱 Responsive design that works on desktop and mobile
+- 🎨 Interactive slide-based presentation using Shower framework
+- ⚡ Live development server with hot reload
+
+**Topics Covered:**
+- Version control fundamentals
+- Git installation and configuration
+- Basic Git workflow (add, commit, push, pull)
+- Branching and merging strategies
+- Working with remote repositories
+- Git best practices and troubleshooting
+
 **View:**
 
 http://Mgldvd.github.io/git-presentation/
