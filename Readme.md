@@ -46,8 +46,6 @@ http://Mgldvd.github.io/git-presentation/
 ### Available Scripts
 
 - `bun run dev` - Start development server with file watching
-- `bun run build` - Build the project
-- `bun start` - Start the server
 
 -----
 
