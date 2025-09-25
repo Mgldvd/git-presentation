@@ -2,11 +2,7 @@
 /* jshint node: true */
 /* jshint esversion: 6 */
 
-'use strict';
-
 const {
-  src,
-  dest,
   parallel,
   series,
   watch
@@ -23,10 +19,10 @@ function serverHtml () {
   browserSync.init({
     port: 8888,
     ui: false,
-    open: true,
+    open: 'true',
     server: {
-      baseDir: './',
-      directory: true
+      baseDir: './gh-pages',
+      directory: false
     }
   });
 }
